@@ -29,10 +29,13 @@ void MainWindow::on_btn_choose_clicked(bool checked)
     ui->cb_animal->setCurrentIndex(++comboIndex >= ui->cb_animal->count() ? comboIndex = 0 : comboIndex);
     //qDebug() << ui->cb_animal->count();
     //qDebug() << comboIndex;
-    int progerssBarValue = ui->progressBar->value();
-    ui->progressBar->setValue(++progerssBarValue > 10 ? progerssBarValue = 0 : progerssBarValue);
+    int progerss_bar_value = ui->progressBar->value();
+    if (++progerss_bar_value > 10)
+    {
+        progerss_bar_value = 0;
+    }
+    ui->progressBar->setValue(progerss_bar_value);
 }
-
 
 void MainWindow::on_btn_lock_toggled(bool checked)
 {
